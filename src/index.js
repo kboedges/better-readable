@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import reducer from './reducers'
 import App from './components/App';
 import { getAllPosts } from './reducers/posts/actions'
+import { getCategoryPosts } from './reducers/category-posts/actions'
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(reducer, compose(
@@ -16,6 +17,7 @@ const store = createStore(reducer, compose(
 ));
 
 store.dispatch(getAllPosts());
+store.dispatch(getCategoryPosts());
 
 ReactDOM.render(
     <Provider store={store}>
