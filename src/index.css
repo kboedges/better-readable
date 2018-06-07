@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700');
 @import url('https://fonts.googleapis.com/css?family=Bitter');
 
+:root {
+  --purple: rgb(96,0,193);
+  --pink: rgb(255,0,183);
+}
+
+html, body {
+  height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
+  background: rgba(249, 220, 255, 0.90);
 }
 
 .Nav {
@@ -21,4 +31,8 @@ body {
 
 .nav-icon {
   margin-left: 1rem;
+}
+
+.post-list {
+  list-style: none;
 }

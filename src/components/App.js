@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+
+// Components
 import Nav from './Nav'
+import ListPosts from './ListPosts'
+import Toolbar from './Toolbar'
 
 class App extends Component {
 
@@ -7,7 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         <Nav/>
-        Meow
+        <Toolbar/>
+        <ListPosts/>
       </div>
     );
   }
