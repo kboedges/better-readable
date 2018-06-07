@@ -55,7 +55,7 @@ body {
   font-size: 1.2rem;
 }
 
-.card-subtitle {
-  color: var(--mutedpurple);
+.text-muted {
+  color: var(--mutedpurple) !important;
 }
 
