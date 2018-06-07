@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 
+// Components
+import AddPost from './AddPost';
+import SortPosts from './SortPosts';
+import SelectCategory from './SelectCategory';
+
 class Toolbar extends Component {
 
   render() {
     return (
-      <div className="Toolbar px-5 py-2">
-        Choose Category
-        Sort Posts
-        Add Post
+      <div className="Toolbar px-5 py-2 d-flex flex-direction-row justify-content-between">
+        <AddPost/>
+        <SortPosts/>
+        <SelectCategory/>
       </div>
     );
   }
