@@ -5,19 +5,25 @@ import './index.css';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import reducer from './reducers'
+import reducer from './reducers';
 import App from './components/App';
-import { getAllPosts } from './reducers/posts/actions'
-import { getCategoryPosts } from './reducers/category-posts/actions'
 import registerServiceWorker from './registerServiceWorker';
+
+// Fetchers on load
+import { getAllPosts } from './reducers/posts/actions';
+import { getCategoryPosts } from './reducers/category-posts/actions';
+import { getCategories } from './reducers/categories/actions';
+
 
 const store = createStore(reducer, compose(
     applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
 
+// Fetching everything on load
 store.dispatch(getAllPosts());
 store.dispatch(getCategoryPosts());
+store.dispatch(getCategories());
 
 ReactDOM.render(
     <Provider store={store}>
