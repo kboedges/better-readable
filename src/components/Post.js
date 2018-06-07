@@ -9,9 +9,6 @@ class Post extends Component {
             <div class="card-body">
                 <h4 class="card-title">Post title</h4>
                 <h6 class="card-subtitle mb-2 text-muted post-author">author</h6>
-                <p class="card-text">
-                Post preview about something that someone thought might be good to write about.
-                </p>
                 <a href="#!" class="card-link ">Edit</a>
                 <a href="#!" class="card-link">Delete</a>
             </div>

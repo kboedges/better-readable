@@ -4,6 +4,8 @@
 :root {
   --purple: rgb(96,0,193);
   --pink: rgb(255,0,183);
+  --darkpurple: #3e056d;
+  --mutedpurple: #c5a6de;
 }
 
 html, body {
@@ -14,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
-  background: rgba(249, 220, 255, 0.90);
+  background: rgba(253, 244, 255, 0.9)
 }
 
 .Nav {
@@ -36,3 +38,24 @@ body {
 .post-list {
   list-style: none;
 }
+
+.card {
+  border: 0;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.28);
+  -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.28);
+  box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.28);
+}
+
+.card-link {
+  color: var(--pink);
+}
+
+.card-title {
+  color: var(--darkpurple);
+  font-size: 1.2rem;
+}
+
+.card-subtitle {
+  color: var(--mutedpurple);
+}
+

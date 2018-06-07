@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav/>
-        <Toolbar/>
+        {/* <Toolbar/> */}
         <ListPosts/>
       </div>
     );
