@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Nav from './Nav';
 import ListPosts from './ListPosts';
 import Toolbar from './Toolbar';
+import PostDetail from './PostDetail'; // Remove this later
 
 class App extends Component {
 
@@ -13,6 +14,7 @@ class App extends Component {
         <Nav/>
         <Toolbar/>
         <ListPosts/>
+        <PostDetail/>
       </div>
     );
   }
