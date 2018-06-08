@@ -16,6 +16,7 @@ class ListPosts extends Component {
                     <li key={post.id}>
                         <Post 
                             post={post}
+                            postDetail={false}
                         />
                     </li>
                 ))}

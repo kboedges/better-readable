@@ -8,10 +8,11 @@ import { getPost } from '../reducers/post/actions';
 class Post extends Component {
   static propTypes = {
     post: PropTypes.object.isRequired,
+    postDetail: PropTypes.bool
   } 
 
   render() {
-    const { post, getPost } = this.props;
+    const { post, getPost, postDetail } = this.props;
 
     return (
       <div className="Post mt-3 d-flex flex-direction-row">
@@ -24,6 +25,7 @@ class Post extends Component {
             <div className="card-body">
                 <h4 onClick={() => getPost(post.id)} className="card-title">{post.title}</h4>
                 <h6 className="card-subtitle mb-2 text-muted post-author">{post.author}</h6>
+                {postDetail && <p className="card-text">{post.body}</p>}
                 <p className="card-text">{post.commentCount} Comments</p>
                 <a href="#!" className="card-link ">Edit</a>
                 <a href="#!" className="card-link">Delete</a>
