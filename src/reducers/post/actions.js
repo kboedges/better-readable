@@ -5,9 +5,9 @@ const headers = {
   
   export const SET_POST = 'SET_POST';
   
-  export function getPost() {
+  export function getPost(id) {
       return dispatch =>
-          fetch("http://localhost:3001/posts/8xf0y6ziyjabvozdd253nd", { headers })
+          fetch(`http://localhost:3001/posts/${id}`, { headers })
               .then(res => res.json())
               .catch(error => console.error('Error:', error))
               .then(post =>

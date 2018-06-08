@@ -26,7 +26,7 @@ const store = createStore(reducer, compose(
 store.dispatch(getAllPosts());
 store.dispatch(getCategoryPosts());
 store.dispatch(getCategories());
-store.dispatch(getPost());
+// store.dispatch(getPost());
 store.dispatch(getPostComments());
 store.dispatch(getComment());
 
