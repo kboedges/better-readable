@@ -10,11 +10,17 @@ class Post extends Component {
     const { post } = this.props;
 
     return (
-      <div className="Post mt-3">
-        <div className="card">
+      <div className="Post mt-3 d-flex flex-direction-row">
+        <div className="btn-group-vertical pr-2 d-flex flex-direction-col align-items-center" role="group" aria-label="Basic example">
+          <button type="button" className="btn btn-link vote">👍</button>
+          <p className="m-0 vote-score">{post.voteScore}</p>
+          <button type="button" className="btn btn-link vote">👎</button>
+        </div>
+        <div className="card flex-grow-1">
             <div className="card-body">
                 <h4 className="card-title">{post.title}</h4>
                 <h6 className="card-subtitle mb-2 text-muted post-author">{post.author}</h6>
+                <p className="card-text">{post.commentCount} Comments</p>
                 <a href="#!" className="card-link ">Edit</a>
                 <a href="#!" className="card-link">Delete</a>
             </div>
