@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 
 // Component
 import Post from './Post';
+import Comment from './Comment';
 
 class PostDetail extends Component {
 
   render() {
-    const { post } = this.props;
+    const { post, comments } = this.props;
 
     return (
       <div className="PostDetail px-5 py-2">
@@ -15,14 +16,24 @@ class PostDetail extends Component {
             post={post}
             postDetail={true}
         />
-
+        <p>{post.commentCount}</p>
+        <ol className="comment-list">
+            {comments.map(comment => (
+                <li key={comment.id}>
+                    <Comment 
+                        comment={comment}
+                    />
+                </li>
+            ))}
+        </ol>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({post}) => ({
+const mapStateToProps = ({post, comments}) => ({
     post,
+    comments
 })
 
 export default connect(mapStateToProps)(PostDetail);

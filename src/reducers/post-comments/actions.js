@@ -5,9 +5,9 @@ const headers = {
   
   export const SET_POST_COMMENTS = 'SET_POST_COMMENTS';
   
-  export function getPostComments() {
+  export function getPostComments(id) {
       return dispatch =>
-          fetch("http://localhost:3001/posts/8xf0y6ziyjabvozdd253nd/comments", { headers })
+          fetch(`http://localhost:3001/posts/${id}/comments`, { headers })
               .then(res => res.json())
               .catch(error => console.error('Error:', error))
               .then(comments =>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 // Actions
 import { getPost } from '../reducers/post/actions';
+import { getPostComments } from '../reducers/post-comments/actions';
 
 class Post extends Component {
   static propTypes = {
@@ -26,7 +27,7 @@ class Post extends Component {
                 <h4 onClick={() => getPost(post.id)} className="card-title">{post.title}</h4>
                 <h6 className="card-subtitle mb-2 text-muted post-author">{post.author}</h6>
                 {postDetail && <p className="card-text">{post.body}</p>}
-                <p className="card-text">{post.commentCount} Comments</p>
+                {!postDetail && <p className="card-text">{post.commentCount} Comments</p>}
                 <a href="#!" className="card-link ">Edit</a>
                 <a href="#!" className="card-link">Delete</a>
             </div>
@@ -41,7 +42,10 @@ const mapStateToProps = ({allPosts}) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getPost: (id) => dispatch(getPost(id))
+  getPost: (id) => {
+      dispatch(getPost(id));
+      dispatch(getPostComments(id));
+  } 
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post);
