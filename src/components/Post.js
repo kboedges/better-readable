@@ -18,9 +18,13 @@ class Post extends Component {
     return (
       <div className="Post mt-3 d-flex flex-direction-row">
         <div className="btn-group-vertical pr-2 d-flex flex-direction-col align-items-center" role="group" aria-label="Basic example">
-          <button type="button" className="btn btn-link vote">👍</button>
+          <button type="button" className="btn btn-link vote">
+            <span aria-label="thumbsup" role="img">👍</span>
+          </button>
           <p className="m-0 vote-score">{post.voteScore}</p>
-          <button type="button" className="btn btn-link vote">👎</button>
+          <button type="button" className="btn btn-link vote">
+            <span aria-label="thumbsdown" role="img">👎</span>
+          </button>
         </div>
         <div className="card flex-grow-1">
             <div className="card-body">
