@@ -10,7 +10,7 @@ class Toolbar extends Component {
   render() {
     return (
       <div className="Toolbar px-5 py-2 d-flex flex-direction-row justify-content-between">
-        <AddPost/>
+        <a href="">Add Post</a>
         <SortPosts/>
         <SelectCategory/>
       </div>

@@ -7,8 +7,8 @@ class SortPosts extends Component {
       <div className="SortPosts">
         <select name="" id="">
             <option value="">Sort Posts</option>
-            <option value="">1</option>
-            <option value="">2</option>
+            <option value="">Most recent</option>
+            <option value="">Highest score</option>
         </select>
       </div>
     );
