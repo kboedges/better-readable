@@ -1,17 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Actions
+import setCategory from '../reducers/set-category';
+
 class SelectCategory extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {value: 'showAllPosts'};
+  // }
+
+  // componentDidMount = () => {
+  //   this.props.dispatch(setCategory('showAllPosts'))
+  // }
+
+  // handleChange = (event) => {
+  //   this.setState({value: event.target.value}, () => this.props.dispatch(setCategory(this.state.value)));
+  //  
+  // }
 
   render() {
     const { categories } = this.props;
-
+    
     return (
       <div className="SelectCategory">
-        <select name="" id="">
-          <option value="">Select Category</option>
+        <select 
+          // value={this.state.value} 
+          // onChange={this.handleChange}
+        >
+          <option defaultValue value="showAllPosts">Select Category</option>
           {categories.map(category => (
-            <option value={category.name}>{category.name}</option>
+            <option value={category.name} key={category.name}>{category.name}</option>
           ))}
         </select>
       </div>
@@ -19,8 +38,13 @@ class SelectCategory extends Component {
   }
 }
 
-const mapStateToProps = ({categories}) => ({
+const mapStateToProps = ({categories, selectedCategory}) => ({
   categories,
+  selectedCategory
 })
 
-export default connect(mapStateToProps)(SelectCategory);
+const mapDispatchToProps = dispatch => ({
+  setCategory: (selectedCategory) => dispatch(setCategory(selectedCategory))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectCategory);

@@ -13,8 +13,6 @@ import registerServiceWorker from './registerServiceWorker';
 import { getAllPosts } from './reducers/posts/actions';
 import { getCategoryPosts } from './reducers/category-posts/actions';
 import { getCategories } from './reducers/categories/actions';
-import { getPost } from './reducers/post/actions';
-import { getPostComments } from './reducers/post-comments/actions';
 import { getComment } from './reducers/comment/actions';
 
 const store = createStore(reducer, compose(
@@ -26,8 +24,6 @@ const store = createStore(reducer, compose(
 store.dispatch(getAllPosts());
 store.dispatch(getCategoryPosts());
 store.dispatch(getCategories());
-// store.dispatch(getPost());
-// store.dispatch(getPostComments());
 store.dispatch(getComment());
 
 ReactDOM.render(

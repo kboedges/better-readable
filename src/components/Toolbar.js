@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
-import AddPost from './AddPost';
+// import AddPost from './AddPost';
 import SortPosts from './SortPosts';
 import SelectCategory from './SelectCategory';
 

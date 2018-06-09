@@ -10,7 +10,7 @@ class AddPost extends Component {
           <input className="form-control mb-2" type="text" name="category" placeholder="Category"/>
           <input className="form-control mb-2" type="text" name="author" placeholder="Author"/>
           <textarea className="form-control mb-2" name="content" placeholder="Content"></textarea>
-          <button class="btn btn-outline-primary" type="button">Add Post</button>
+          <button className="btn btn-outline-primary" type="button">Add Post</button>
       </div>
       </div>
     );

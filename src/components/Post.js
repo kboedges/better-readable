@@ -37,10 +37,6 @@ class Post extends Component {
   }
 }
 
-const mapStateToProps = ({allPosts}) => ({
-  allPosts,
-})
-
 const mapDispatchToProps = dispatch => ({
   getPost: (id) => {
       dispatch(getPost(id));
@@ -48,4 +44,4 @@ const mapDispatchToProps = dispatch => ({
   } 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Post);
+export default connect(null, mapDispatchToProps)(Post);
