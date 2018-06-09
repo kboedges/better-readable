@@ -6,13 +6,11 @@ class AddPost extends Component {
     return (
       <div className="AddPost px-5 py-2">
         <div className="add-post">
-        <form className="col add-post-form">
-          <input type="text" name="title" className="form-control mb-2" placeholder="Title"/>
-          <input type="text" name="category" className="form-control mb-2" placeholder="Category"/>
-          <input type="text" name="author" className="form-control mb-2" placeholder="Author"/>
-          <textarea name="content" className="form-control mb-2" cols="30" rows="10" placeholder="Content"></textarea>
-          <button type="button" class="btn btn-outline-primary">Primary</button>
-        </form>
+          <input className="form-control mb-2" type="text" name="title" placeholder="Title"/>
+          <input className="form-control mb-2" type="text" name="category" placeholder="Category"/>
+          <input className="form-control mb-2" type="text" name="author" placeholder="Author"/>
+          <textarea className="form-control mb-2" name="content" placeholder="Content"></textarea>
+          <button class="btn btn-outline-primary" type="button">Add Post</button>
       </div>
       </div>
     );

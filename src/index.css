@@ -73,6 +73,6 @@ body {
   border-color: var(--purple);
 }
 
-.AddComment .card {
-  margin-left: calc(6rem + 3px);
+.AddComment {
+  margin-left: calc(6rem + 2px);
 }
