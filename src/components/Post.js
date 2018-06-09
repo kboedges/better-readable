@@ -27,7 +27,7 @@ class Post extends Component {
                 <h4 onClick={() => getPost(post.id)} className="card-title">{post.title}</h4>
                 <h6 className="card-subtitle mb-2 text-muted post-author">{post.author}</h6>
                 {postDetail && <p className="card-text">{post.body}</p>}
-                {!postDetail && <p className="card-text">{post.commentCount} Comments</p>}
+                <p className="card-text">{post.commentCount} Comments</p>
                 <a href="#!" className="card-link ">Edit</a>
                 <a href="#!" className="card-link">Delete</a>
             </div>

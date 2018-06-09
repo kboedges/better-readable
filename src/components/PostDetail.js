@@ -16,7 +16,6 @@ class PostDetail extends Component {
             post={post}
             postDetail={true}
         />
-        <p>{post.commentCount}</p>
         <ol className="comment-list">
             {comments.map(comment => (
                 <li key={comment.id}>

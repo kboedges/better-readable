@@ -35,7 +35,7 @@ body {
   margin-left: 1rem;
 }
 
-.post-list {
+.post-list, .comment-list {
   list-style: none;
 }
 
