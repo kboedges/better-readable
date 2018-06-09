@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class SelectCategory extends Component {
 
   render() {
+    const { categories } = this.props;
+
     return (
       <div className="SelectCategory">
         <select name="" id="">
-            <option value="">Select Category</option>
-            <option value="">1</option>
-            <option value="">2</option>
+          <option value="">Select Category</option>
+          {categories.map(category => (
+            <option value={category.name}>{category.name}</option>
+          ))}
         </select>
       </div>
     );
   }
 }
 
-export default SelectCategory;
+const mapStateToProps = ({categories}) => ({
+  categories,
+})
+
+export default connect(mapStateToProps)(SelectCategory);

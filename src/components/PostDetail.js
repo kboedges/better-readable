@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // Component
 import Post from './Post';
 import Comment from './Comment';
+import AddComment from './AddComment';
 
 class PostDetail extends Component {
 
@@ -16,6 +17,7 @@ class PostDetail extends Component {
             post={post}
             postDetail={true}
         />
+        <AddComment/>
         <ol className="comment-list">
             {comments.map(comment => (
                 <li key={comment.id}>
