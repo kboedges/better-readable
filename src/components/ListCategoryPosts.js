@@ -25,7 +25,7 @@ class ListCategoryPosts extends Component {
                 ) : (
                     <p>Oops, nothing here...</p>
                 )
-            } 
+                } 
                 </ol>
             </div>
         );
