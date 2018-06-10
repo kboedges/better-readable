@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom'
 
 // Components
 import Nav from './Nav';
 import ListPosts from './ListPosts';
 import Toolbar from './Toolbar';
-import PostDetail from './PostDetail'; // Remove this later
+// import PostDetail from './PostDetail'; // Remove this later
 import AddPost from './AddPost'; // Remove this later
+import ListCategoryPosts from './ListCategoryPosts';
 
 class App extends Component {
 
@@ -13,10 +15,24 @@ class App extends Component {
     return (
       <div className="App">
         <Nav/>
-        <Toolbar/>
-        <ListPosts/>
-        <AddPost/>
-        <PostDetail/>
+        
+        <Switch>
+          <Route exact path='/' render={() => (
+            <div>
+              <Toolbar/>
+              <ListPosts/>
+            </div>
+          )}/>
+          <Route exact path='/add-post' component={AddPost}/>
+          <Route path="/:category"  component={ListCategoryPosts}/>
+          <Route path="/:category/:post_id" render={(dog) => (
+            <div>
+              {console.log("Post ID", dog.match.params.category)}
+            </div>
+          )} />
+        </Switch>
+        
+        {/* <PostDetail/> */}
       </div>
     );
   }

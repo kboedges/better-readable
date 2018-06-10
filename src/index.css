@@ -55,6 +55,10 @@ body {
   font-size: 1.2rem;
 }
 
+.add-post-title {
+  color: var(--darkpurple);
+}
+
 .text-muted {
   color: var(--mutedpurple) !important;
 }
@@ -69,8 +73,8 @@ body {
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--purple);
-  border-color: var(--purple);
+  background-color: var(--purple) !important;
+  border-color: var(--purple) !important;
 }
 
 .AddComment {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
-// import AddPost from './AddPost';
 import SortPosts from './SortPosts';
 import SelectCategory from './SelectCategory';
 
@@ -10,7 +10,7 @@ class Toolbar extends Component {
   render() {
     return (
       <div className="Toolbar px-5 py-2 d-flex flex-direction-row justify-content-between">
-        <a href="">Add Post</a>
+        <Link className="btn btn-outline-primary" role="button" to="/add-post">Add Post</Link>
         <SortPosts/>
         <SelectCategory/>
       </div>
