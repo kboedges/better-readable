@@ -13,19 +13,18 @@ class ListCategoryPosts extends Component {
         return (
             <div className="ListCategoryPosts">
                 <ol className="post-list px-5 py-2">
-                {allPosts.filter(post => post.category === selectedCategory).length > 0 ? (
-                    allPosts.filter(post => post.category === selectedCategory).map(post => (
-                        <li key={post.id}>
-                            <Post 
-                                post={post}
-                                postDetail={false}
-                            />
-                        </li>
-                    ))
-                ) : (
-                    <p>Oops, nothing here...</p>
-                )
-                } 
+                    {allPosts.filter(post => post.category === selectedCategory).length > 0 ? (
+                        allPosts.filter(post => post.category === selectedCategory).map(post => (
+                            <li key={post.id}>
+                                <Post 
+                                    post={post}
+                                    postDetail={false}
+                                />
+                            </li>
+                        ))
+                    ) : (
+                        <p>Oops, nothing here...</p>
+                    )} 
                 </ol>
             </div>
         );
