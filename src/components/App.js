@@ -5,8 +5,8 @@ import { Route, Switch } from 'react-router-dom'
 import Nav from './Nav';
 import ListPosts from './ListPosts';
 import Toolbar from './Toolbar';
-// import PostDetail from './PostDetail'; // Remove this later
-import AddPost from './AddPost'; // Remove this later
+import PostDetail from './PostDetail';
+import AddPost from './AddPost';
 import ListCategoryPosts from './ListCategoryPosts';
 
 class App extends Component {
@@ -24,12 +24,8 @@ class App extends Component {
             </div>
           )}/>
           <Route exact path='/add-post' component={AddPost}/>
-          <Route path="/:category"  component={ListCategoryPosts}/>
-          <Route path="/:category/:post_id" render={(dog) => (
-            <div>
-              {console.log("Post ID", dog.match.params.category)}
-            </div>
-          )} />
+          <Route exact path="/:category" component={ListCategoryPosts}/>
+          <Route exact path="/:category/:post_id" component={PostDetail}/>
         </Switch>
         
         {/* <PostDetail/> */}

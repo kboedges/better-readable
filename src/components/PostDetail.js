@@ -10,6 +10,7 @@ class PostDetail extends Component {
 
   render() {
     const { post, comments } = this.props;
+    console.log(this.props.match.params)
 
     return (
       <div className="PostDetail px-5 py-2">
