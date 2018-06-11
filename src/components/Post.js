@@ -29,9 +29,15 @@ class Post extends Component {
         </div>
         <div className="card flex-grow-1">
             <div className="card-body">
-                <Link to={`/${post.category}/${post.id}`}>
-                  <h4 onClick={() => getPost(post.id)} className="card-title">{post.title}</h4>
-                </Link>
+                {!postDetail ? (
+                  <Link to={`/${post.category}/${post.id}`}>
+                    <h4 onClick={() => getPost(post.id)} className="card-title">{post.title}</h4>
+                  </Link>
+                ) : (
+                  <h4 className="card-title">{post.title}</h4>
+                )
+                }
+
                 <h6 className="card-subtitle mb-2 text-muted post-author">{post.author}</h6>
                 {postDetail && <p className="card-text">{post.body}</p>}
                 <p className="card-text">{post.commentCount} Comments</p>
