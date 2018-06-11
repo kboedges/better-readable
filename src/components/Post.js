@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 // Actions
 import { getPost } from '../reducers/post/actions';
@@ -28,7 +29,9 @@ class Post extends Component {
         </div>
         <div className="card flex-grow-1">
             <div className="card-body">
-                <h4 onClick={() => getPost(post.id)} className="card-title">{post.title}</h4>
+                <Link to={`/${post.category}/${post.id}`}>
+                  <h4 onClick={() => getPost(post.id)} className="card-title">{post.title}</h4>
+                </Link>
                 <h6 className="card-subtitle mb-2 text-muted post-author">{post.author}</h6>
                 {postDetail && <p className="card-text">{post.body}</p>}
                 <p className="card-text">{post.commentCount} Comments</p>

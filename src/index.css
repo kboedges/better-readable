@@ -80,3 +80,7 @@ body {
 .AddComment {
   margin-left: calc(6rem + 2px);
 }
+
+a:hover {
+  text-decoration: none !important;
+}
