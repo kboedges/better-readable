@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom'
 // Components
 import Nav from './Nav';
 import ListPosts from './ListPosts';
-import Toolbar from './Toolbar';
 import PostDetail from './PostDetail';
 import AddPost from './AddPost';
 import ListCategoryPosts from './ListCategoryPosts';
@@ -17,12 +16,7 @@ class App extends Component {
         <Nav/>
         
         <Switch>
-          <Route exact path='/' render={() => (
-            <div>
-              <Toolbar/>
-              <ListPosts/>
-            </div>
-          )}/>
+          <Route exact path='/' component={ListPosts}/>
           <Route exact path='/add-post' component={AddPost}/>
           <Route exact path="/:category" component={ListCategoryPosts}/>
           <Route exact path="/:category/:post_id" component={PostDetail}/>

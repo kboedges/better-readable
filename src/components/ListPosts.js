@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 // Components
 import Post from './Post';
+import Toolbar from './Toolbar';
 
 class ListPosts extends Component {
 
@@ -11,6 +12,7 @@ class ListPosts extends Component {
 
         return (
             <div className="ListPosts">
+            <Toolbar/>
                 <ol className="post-list px-5 py-2">
                 {allPosts.map(post => (
                     <li key={post.id}>
