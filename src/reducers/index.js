@@ -9,6 +9,7 @@ import comments from "./post-comments";
 import comment from "./comment";
 import newPost from "./add-post";
 import newComment from "./add-comment";
+import votePost from "./vote-post";
 
 export default combineReducers({
   allPosts,
@@ -18,5 +19,6 @@ export default combineReducers({
   comments,
   comment,
   newPost,
-  newComment
+  newComment,
+  votePost
 });
