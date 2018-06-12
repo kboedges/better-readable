@@ -15,3 +15,20 @@ class SortPosts extends Component {
 }
 
 export default SortPosts;
+
+/* 
+Pull in allPosts and categoryPosts
+onChange, take in the value and based on the value, sort by timestamp or voteScore
+
+onChange = (option, postList) => {
+  postList.sort(function(a,b){
+    return a.option-b.option
+  }
+}
+
+*/
+
+// http://www.javascriptkit.com/javatutors/arraysort2.shtml
+//   employees.sort(function(a, b){
+//     return a.age-b.age
+// })
