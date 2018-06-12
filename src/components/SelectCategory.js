@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
 
 class SelectCategory extends Component {
@@ -13,11 +12,10 @@ class SelectCategory extends Component {
     console.log(e.target.value)
     this.props.history.push(`/${e.target.value}`);
   }
-  
 
   render() {
     const { categories } = this.props;
-    console.log(this.props)
+    // console.log(this.props)
     
     return (
       <div className="SelectCategory">

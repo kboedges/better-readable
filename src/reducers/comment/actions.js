@@ -1,6 +1,6 @@
 const headers = {
     'Accept': 'application/json',
-    'Authorization': 'meow'
+    'Authorization': 'flower'
   }
   
   export const SET_COMMENT = 'SET_COMMENT';

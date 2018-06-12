@@ -15,6 +15,7 @@ import { getAllPosts } from './reducers/posts/actions';
 import { getCategoryPosts } from './reducers/category-posts/actions';
 import { getCategories } from './reducers/categories/actions';
 import { getComment } from './reducers/comment/actions';
+// import { addPost } from './reducers/add-post/actions';
 
 const store = createStore(reducer, compose(
     applyMiddleware(thunk),
@@ -26,6 +27,7 @@ store.dispatch(getAllPosts());
 store.dispatch(getCategoryPosts());
 store.dispatch(getCategories());
 store.dispatch(getComment());
+// store.dispatch(addPost());
 
 ReactDOM.render(
     <Provider store={store}>

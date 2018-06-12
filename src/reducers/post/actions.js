@@ -1,6 +1,6 @@
 const headers = {
     'Accept': 'application/json',
-    'Authorization': 'penis'
+    'Authorization': 'flower'
   }
   
   export const SET_POST = 'SET_POST';

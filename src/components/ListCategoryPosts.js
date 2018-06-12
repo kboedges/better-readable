@@ -6,11 +6,13 @@ import { connect } from 'react-redux';
 import Post from './Post';
 import Toolbar from './Toolbar';
 
+// Actions 
+import { getAllPosts } from '../reducers/posts/actions';
+
 class ListCategoryPosts extends Component {
-    //this.props.history.push('/udacity');
-    // changeCategoryURL = (category) => {
-    //     this.props.history.push(`/${category}`);
-    // }
+    componentDidMount() {
+        this.props.getAllPosts()
+    }
 
     render() {
         const { allPosts } = this.props;
@@ -42,4 +44,8 @@ const mapStateToProps = ({allPosts}) => ({
     allPosts,
 })
 
-export default connect(mapStateToProps)(ListCategoryPosts);
+const mapDispatchToProps = (dispatch) => ({
+    getAllPosts: () => dispatch(getAllPosts())
+  });
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListCategoryPosts);

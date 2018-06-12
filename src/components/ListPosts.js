@@ -5,7 +5,13 @@ import { connect } from 'react-redux';
 import Post from './Post';
 import Toolbar from './Toolbar';
 
+// Actions 
+import { getAllPosts } from '../reducers/posts/actions';
+
 class ListPosts extends Component {
+    componentDidMount() {
+        this.props.getAllPosts()
+    }
 
     render() {
         const { allPosts } = this.props;
@@ -32,4 +38,8 @@ const mapStateToProps = ({allPosts}) => ({
     allPosts,
 })
 
-export default connect(mapStateToProps)(ListPosts);
+const mapDispatchToProps = (dispatch) => ({
+    getAllPosts: () => dispatch(getAllPosts())
+  });
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListPosts);
