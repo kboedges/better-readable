@@ -16,23 +16,34 @@ class AddComment extends Component {
     };
   }
 
+  // componentDidMount() {
+  //   this.props.addComment({
+  //     id: Math.floor((1 + Math.random()) * 0x10000),
+  //     timestamp: Date.now(),
+  //     body: "Comments are cool!!",
+  //     author: "katie",
+  //     parentId: "8xf0y6ziyjabvozdd253nd"
+  //   });
+  // }
+
   handleChange = event => {
     const target = event.target;
     const value = target.value;
     const name = target.name;
 
-    this.setState({
-      [name]: value
-    });
-
-    this.setState({
-      parentId: this.props.post.id
-    });
-    console.log(this.state, this.props.post.id);
+    this.setState(
+      {
+        [name]: value,
+        parentId: this.props.post.id
+      },
+      function() {
+        console.log(this.state, this.props.post.id);
+      }
+    );
   };
 
   render() {
-    const { post } = this.props;
+    const { addComment } = this.props;
 
     return (
       <div className="AddComment flex-grow-1 mt-4">

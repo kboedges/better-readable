@@ -29,6 +29,4 @@ onChange = (option, postList) => {
 */
 
 // http://www.javascriptkit.com/javatutors/arraysort2.shtml
-//   employees.sort(function(a, b){
-//     return a.age-b.age
-// })
+

@@ -30,7 +30,6 @@ class AddPost extends Component {
 
   render() {
     const { addPost } = this.props;
-    console.log(this.state);
 
     return (
       <div className="AddPost px-5 py-2 pt-5">
