@@ -14,7 +14,6 @@ export function addComment(newComment) {
       body: JSON.stringify(newComment)
     })
       .then(res => res.json())
-      .catch(error => console.error("Error:", error))
       .then(newComment => dispatch(addCommentSuccess(newComment)));
 }
 

@@ -34,7 +34,11 @@ class Post extends Component {
             </span>
           </button>
           <p className="m-0 vote-score">{post.voteScore}</p>
-          <button type="button" className="btn btn-link vote">
+          <button
+            onClick={() => votePost(post.id, "downVote")}
+            type="button"
+            className="btn btn-link vote"
+          >
             <span aria-label="thumbsdown" role="img">
               👎
             </span>

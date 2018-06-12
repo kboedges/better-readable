@@ -8,10 +8,12 @@ import AddComment from "./AddComment";
 
 // Actions
 import { getPost } from "../reducers/post/actions";
+import { getPostComments } from "../reducers/post-comments/actions";
 
 class PostDetail extends Component {
   componentDidMount() {
     this.props.getPost(this.props.match.params.post_id);
+    this.props.getPostComments(this.props.match.params.post_id);
   }
 
   render() {
@@ -39,7 +41,8 @@ const mapStateToProps = ({ post, comments }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getPost: id => dispatch(getPost(id))
+  getPost: id => dispatch(getPost(id)),
+  getPostComments: id => dispatch(getPostComments(id))
 });
 
 export default connect(
