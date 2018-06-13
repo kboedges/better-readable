@@ -13,6 +13,14 @@ class ListCategoryPosts extends Component {
     this.props.getAllPosts();
   }
 
+  sortPost = (a, b) => {
+    if (this.props.sortOption === "byScore") {
+      return b.voteScore - a.voteScore;
+    } else {
+      return b.timestamp - a.timestamp;
+    }
+  };
+
   render() {
     const { allPosts } = this.props;
     const selectedCategory = this.props.match.params.category;
@@ -24,6 +32,7 @@ class ListCategoryPosts extends Component {
           {allPosts.filter(post => post.category === selectedCategory).length >
           0 ? (
             allPosts
+              .sort(this.sortPost)
               .filter(post => post.category === selectedCategory)
               .map(post => (
                 <li key={post.id}>
@@ -39,8 +48,9 @@ class ListCategoryPosts extends Component {
   }
 }
 
-const mapStateToProps = ({ allPosts }) => ({
-  allPosts
+const mapStateToProps = ({ allPosts, sortOption }) => ({
+  allPosts,
+  sortOption
 });
 
 const mapDispatchToProps = dispatch => ({

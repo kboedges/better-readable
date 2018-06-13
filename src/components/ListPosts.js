@@ -13,6 +13,14 @@ class ListPosts extends Component {
     this.props.getAllPosts();
   }
 
+  sortPost = (a, b) => {
+    if (this.props.sortOption === "byScore") {
+      return b.voteScore - a.voteScore;
+    } else {
+      return b.timestamp - a.timestamp;
+    }
+  };
+
   render() {
     const { allPosts } = this.props;
 
@@ -20,7 +28,7 @@ class ListPosts extends Component {
       <div className="ListPosts">
         <Toolbar />
         <ol className="post-list px-5 py-2">
-          {allPosts.map(post => (
+          {allPosts.sort(this.sortPost).map(post => (
             <li key={post.id}>
               <Post post={post} postDetail={false} />
             </li>
@@ -31,8 +39,9 @@ class ListPosts extends Component {
   }
 }
 
-const mapStateToProps = ({ allPosts }) => ({
-  allPosts
+const mapStateToProps = ({ allPosts, sortOption }) => ({
+  allPosts,
+  sortOption
 });
 
 const mapDispatchToProps = dispatch => ({
