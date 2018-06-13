@@ -1,6 +1,6 @@
 import { VOTE_POST_SUCCESS } from "./actions";
 
-const initialState = [];
+const initialState = {};
 
 export default (state = initialState, action) => {
   switch (action.type) {
