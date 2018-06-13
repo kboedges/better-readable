@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 // Actions
 import { addComment } from "../reducers/add-comment/actions";
+import { getPostComments } from "../reducers/post-comments/actions";
 
 class AddComment extends Component {
   constructor(props) {
@@ -26,24 +27,30 @@ class AddComment extends Component {
   //   });
   // }
 
+  handleCommentSubmit = (commentObj, postId) => {
+    this.props.addCommentUpdate(commentObj, postId);
+    this.setState({
+      id: Math.floor((1 + Math.random()) * 0x10000),
+      timestamp: Date.now(),
+      body: "",
+      author: "",
+      parentId: ""
+    });
+  };
+
   handleChange = event => {
     const target = event.target;
     const value = target.value;
     const name = target.name;
 
-    this.setState(
-      {
-        [name]: value,
-        parentId: this.props.post.id
-      },
-      function() {
-        console.log(this.state, this.props.post.id);
-      }
-    );
+    this.setState({
+      [name]: value,
+      parentId: this.props.post.id
+    });
   };
 
   render() {
-    const { addComment } = this.props;
+    const { addComment, post } = this.props;
 
     return (
       <div className="AddComment flex-grow-1 mt-4">
@@ -65,7 +72,7 @@ class AddComment extends Component {
         <button
           className="btn btn-outline-primary"
           type="button"
-          onClick={() => addComment(this.state)}
+          onClick={() => this.handleCommentSubmit(this.state, post.id)}
         >
           Add Comment
         </button>
@@ -79,7 +86,10 @@ const mapStateToProps = ({ post }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addComment: newComment => dispatch(addComment(newComment))
+  addCommentUpdate: (newComment, postId) => {
+    dispatch(addComment(newComment));
+    dispatch(getPostComments(postId));
+  }
 });
 
 export default connect(
