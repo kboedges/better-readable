@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 // Actions
 import { addComment } from "../reducers/add-comment/actions";
 import { getPostComments } from "../reducers/post-comments/actions";
+import { getPost } from "../reducers/post/actions";
 
 class AddComment extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class AddComment extends Component {
   handleCommentSubmit = commentObj => {
     this.props.addComment(commentObj).then(() => {
       this.props.getPostComments(this.props.post.id);
-      console.log("wtf");
+      this.props.getPost(this.props.post.id);
       this.setState({
         id: Math.floor((1 + Math.random()) * 0x10000).toString(),
         timestamp: Date.now(),
@@ -81,7 +82,8 @@ const mapStateToProps = ({ post }) => ({
 
 const mapDispatchToProps = dispatch => ({
   addComment: newComment => dispatch(addComment(newComment)),
-  getPostComments: postId => dispatch(getPostComments(postId))
+  getPostComments: postId => dispatch(getPostComments(postId)),
+  getPost: postId => dispatch(getPost(postId))
 });
 
 export default connect(
