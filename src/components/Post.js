@@ -27,7 +27,6 @@ class Post extends Component {
   deletePostHandler = () => {
     const postId = this.props.post.id;
     this.props.deletePost(postId).then(() => {
-      // this.props.getPost(postId);
       this.props.getAllPosts();
     });
   };

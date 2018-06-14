@@ -9,7 +9,7 @@ class AddComment extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: Math.floor((1 + Math.random()) * 0x10000),
+      id: Math.floor((1 + Math.random()) * 0x10000).toString(),
       timestamp: Date.now(),
       body: "",
       author: "",
@@ -17,14 +17,17 @@ class AddComment extends Component {
     };
   }
 
-  handleCommentSubmit = (commentObj, postId) => {
-    this.props.addCommentUpdate(commentObj, postId);
-    this.setState({
-      id: Math.floor((1 + Math.random()) * 0x10000),
-      timestamp: Date.now(),
-      body: "",
-      author: "",
-      parentId: ""
+  handleCommentSubmit = commentObj => {
+    this.props.addComment(commentObj).then(() => {
+      this.props.getPostComments(this.props.post.id);
+      console.log("wtf");
+      this.setState({
+        id: Math.floor((1 + Math.random()) * 0x10000).toString(),
+        timestamp: Date.now(),
+        body: "",
+        author: "",
+        parentId: ""
+      });
     });
   };
 
@@ -37,6 +40,7 @@ class AddComment extends Component {
       [name]: value,
       parentId: this.props.post.id
     });
+    console.log(this.state);
   };
 
   render() {
@@ -76,10 +80,8 @@ const mapStateToProps = ({ post }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addCommentUpdate: (newComment, postId) => {
-    dispatch(addComment(newComment));
-    dispatch(getPostComments(postId));
-  }
+  addComment: newComment => dispatch(addComment(newComment)),
+  getPostComments: postId => dispatch(getPostComments(postId))
 });
 
 export default connect(

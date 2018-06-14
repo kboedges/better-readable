@@ -9,7 +9,7 @@ class AddPost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: Math.floor((1 + Math.random()) * 0x10000),
+      id: Math.floor((1 + Math.random()) * 0x10000).toString(),
       timestamp: Date.now(),
       title: "",
       body: "",
