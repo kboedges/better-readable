@@ -7,6 +7,7 @@ import ListPosts from "./ListPosts";
 import PostDetail from "./PostDetail";
 import AddPost from "./AddPost";
 import ListCategoryPosts from "./ListCategoryPosts";
+import EditPost from "./EditPost";
 
 class App extends Component {
   render() {
@@ -19,6 +20,11 @@ class App extends Component {
           <Route exact path="/add-post" component={AddPost} />
           <Route exact path="/:category" component={ListCategoryPosts} />
           <Route exact path="/:category/:post_id" component={PostDetail} />
+          <Route
+            exact
+            path="/:category/:post_id/edit-post"
+            component={EditPost}
+          />
         </Switch>
 
         {/* <PostDetail/> */}

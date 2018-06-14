@@ -78,9 +78,12 @@ class Post extends Component {
             </h6>
             {postDetail && <p className="card-text">{post.body}</p>}
             <p className="card-text">{post.commentCount} Comments</p>
-            <a href="#!" className="card-link ">
+            <Link
+              to={`/${post.category}/${post.id}/edit-post`}
+              className="card-link "
+            >
               Edit
-            </a>
+            </Link>
             <Link to="/" onClick={this.deletePostHandler} className="card-link">
               Delete
             </Link>
