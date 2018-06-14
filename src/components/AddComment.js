@@ -17,16 +17,6 @@ class AddComment extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.props.addComment({
-  //     id: Math.floor((1 + Math.random()) * 0x10000),
-  //     timestamp: Date.now(),
-  //     body: "Comments are cool!!",
-  //     author: "katie",
-  //     parentId: "8xf0y6ziyjabvozdd253nd"
-  //   });
-  // }
-
   handleCommentSubmit = (commentObj, postId) => {
     this.props.addCommentUpdate(commentObj, postId);
     this.setState({
@@ -50,7 +40,7 @@ class AddComment extends Component {
   };
 
   render() {
-    const { addComment, post } = this.props;
+    const { post } = this.props;
 
     return (
       <div className="AddComment flex-grow-1 mt-4">

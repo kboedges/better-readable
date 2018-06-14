@@ -12,6 +12,8 @@ import newComment from "./add-comment";
 import votePost from "./vote-post";
 import voteComment from "./vote-comment";
 import sortOption from "./sort-posts";
+import deletedPost from "./delete-post";
+import deletedComment from "./delete-comment";
 
 export default combineReducers({
   allPosts,
@@ -24,5 +26,7 @@ export default combineReducers({
   newComment,
   votePost,
   voteComment,
-  sortOption
+  sortOption,
+  deletedPost,
+  deletedComment
 });

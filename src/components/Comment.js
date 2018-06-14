@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 // Actions
 import { getPostComments } from "../reducers/post-comments/actions";
 import { voteComment } from "../reducers/vote-comment/actions";
+import { deleteComment } from "../reducers/delete-comment/actions";
+import { getPost } from "../reducers/post/actions";
 
 class Comment extends Component {
   static propTypes = {
@@ -12,14 +14,20 @@ class Comment extends Component {
   };
 
   voteCommentHandler = option => {
-    console.log(this.props.comment);
     this.props.voteComment(this.props.comment.id, option).then(() => {
       this.props.getPostComments(this.props.comment.parentId);
     });
   };
 
+  deleteCommentHandler = () => {
+    this.props.deleteComment(this.props.comment.id).then(() => {
+      this.props.getPostComments(this.props.comment.parentId);
+      this.props.getPost(this.props.comment.parentId);
+    });
+  };
+
   render() {
-    const { comment, voteComment } = this.props;
+    const { comment } = this.props;
 
     return (
       <div className="Comment mt-3 d-flex flex-direction-row">
@@ -58,7 +66,11 @@ class Comment extends Component {
             <a href="#!" className="card-link ">
               Edit
             </a>
-            <a href="#!" className="card-link">
+            <a
+              href="#!"
+              onClick={this.deleteCommentHandler}
+              className="card-link"
+            >
               Delete
             </a>
           </div>
@@ -70,7 +82,9 @@ class Comment extends Component {
 
 const mapDispatchToProps = dispatch => ({
   voteComment: (commentId, option) => dispatch(voteComment(commentId, option)),
-  getPostComments: postId => dispatch(getPostComments(postId))
+  getPostComments: postId => dispatch(getPostComments(postId)),
+  deleteComment: commentId => dispatch(deleteComment(commentId)),
+  getPost: postId => dispatch(getPost(postId))
 });
 
 export default connect(

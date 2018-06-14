@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 
 // Actions
 import { getPost } from "../reducers/post/actions";
+import { getAllPosts } from "../reducers/posts/actions";
 import { getPostComments } from "../reducers/post-comments/actions";
 import { votePost } from "../reducers/vote-post/actions";
+import { deletePost } from "../reducers/delete-post/actions";
 
 class Post extends Component {
   static propTypes = {
@@ -15,14 +17,23 @@ class Post extends Component {
   };
 
   votePostHandler = option => {
-    this.props.votePost(this.props.post.id, option).then(() => {
-      console.log("hi");
-      this.props.getPost(this.props.post.id);
+    const postId = this.props.post.id;
+    this.props.votePost(postId, option).then(() => {
+      this.props.getPost(postId);
+      this.props.getAllPosts();
+    });
+  };
+
+  deletePostHandler = () => {
+    const postId = this.props.post.id;
+    this.props.deletePost(postId).then(() => {
+      // this.props.getPost(postId);
+      this.props.getAllPosts();
     });
   };
 
   render() {
-    const { post, getPost, votePost, postDetail } = this.props;
+    const { post, getPost, postDetail } = this.props;
 
     return (
       <div className="Post mt-3 d-flex flex-direction-row">
@@ -71,9 +82,9 @@ class Post extends Component {
             <a href="#!" className="card-link ">
               Edit
             </a>
-            <a href="#!" className="card-link">
+            <Link to="/" onClick={this.deletePostHandler} className="card-link">
               Delete
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -86,7 +97,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch(getPost(id));
     dispatch(getPostComments(id));
   },
-  votePost: (postId, option) => dispatch(votePost(postId, option))
+  votePost: (postId, option) => dispatch(votePost(postId, option)),
+  deletePost: postId => dispatch(deletePost(postId)),
+  getAllPosts: () => dispatch(getAllPosts())
 });
 
 export default connect(
