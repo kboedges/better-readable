@@ -35,7 +35,8 @@ class PostDetail extends Component {
   }
 }
 
-const mapStateToProps = ({ post, comments }) => ({
+const mapStateToProps = ({ allPosts, post, comments }) => ({
+  allPosts,
   post,
   comments
 });

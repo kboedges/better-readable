@@ -10,6 +10,7 @@ import comment from "./comment";
 import newPost from "./add-post";
 import newComment from "./add-comment";
 import votePost from "./vote-post";
+import voteComment from "./vote-comment";
 import sortOption from "./sort-posts";
 
 export default combineReducers({
@@ -22,5 +23,6 @@ export default combineReducers({
   newPost,
   newComment,
   votePost,
+  voteComment,
   sortOption
 });

@@ -1,0 +1,12 @@
+import { VOTE_COMMENT_SUCCESS } from "./actions";
+
+const initialState = {};
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case VOTE_COMMENT_SUCCESS:
+      return action.voteComment;
+    default:
+      return state;
+  }
+};

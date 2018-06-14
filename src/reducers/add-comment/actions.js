@@ -6,19 +6,6 @@ const headers = {
 
 export const ADD_COMMENT_SUCCESS = "ADD_COMMENT_SUCCESS";
 
-// export function addComment(newComment) {
-//   console.log("THIS", newComment);
-//   return dispatch =>
-//     fetch("http://localhost:3001/comments", {
-//       headers,
-//       method: "POST",
-//       body: JSON.stringify(newComment)
-//     })
-//       .then(res => res.json())
-//       .catch(error => console.log(error))
-//       .then(newComment => dispatch(addCommentSuccess(newComment)));
-// }
-
 export function addComment(newComment) {
   console.log("?");
   return dispatch =>
@@ -28,6 +15,7 @@ export function addComment(newComment) {
       body: JSON.stringify(newComment)
     })
       .then(res => res.json())
+      .catch(error => console.log(error))
       .then(newComment => console.log(newComment));
 }
 

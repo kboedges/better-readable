@@ -14,6 +14,13 @@ class Post extends Component {
     postDetail: PropTypes.bool
   };
 
+  votePostHandler = option => {
+    this.props.votePost(this.props.post.id, option).then(() => {
+      console.log("hi");
+      this.props.getPost(this.props.post.id);
+    });
+  };
+
   render() {
     const { post, getPost, votePost, postDetail } = this.props;
 
@@ -25,7 +32,7 @@ class Post extends Component {
           aria-label="Basic example"
         >
           <button
-            onClick={() => votePost(post.id, "upVote")}
+            onClick={() => this.votePostHandler("upVote")}
             type="button"
             className="btn btn-link vote"
           >
@@ -35,7 +42,7 @@ class Post extends Component {
           </button>
           <p className="m-0 vote-score">{post.voteScore}</p>
           <button
-            onClick={() => votePost(post.id, "downVote")}
+            onClick={() => this.votePostHandler("downVote")}
             type="button"
             className="btn btn-link vote"
           >
