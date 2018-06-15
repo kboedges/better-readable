@@ -14,6 +14,10 @@ $ cd better-readable
 2. Install all project dependencies with `yarn install`
 3. Start the development server with `yarn start`
 
+## Server
+
+The server is available at: https://github.com/udacity/reactnd-project-readable-starter 
+
 ## Additional Info
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
