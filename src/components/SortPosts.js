@@ -20,16 +20,9 @@ class SortPosts extends Component {
   render() {
     return (
       <div className="SortPosts">
-        <select onChange={this.handleChange}>
-          <option selected={this.props.sortOption === "byDate"} value="byDate">
-            Most recent
-          </option>
-          <option
-            selected={this.props.sortOption === "byScore"}
-            value="byScore"
-          >
-            Highest score
-          </option>
+        <select value={this.props.sortOption} onChange={this.handleChange}>
+          <option value="byDate">Most recent</option>
+          <option value="byScore">Highest score</option>
         </select>
       </div>
     );

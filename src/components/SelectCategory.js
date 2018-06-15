@@ -29,16 +29,10 @@ class SelectCategory extends Component {
 
     return (
       <div className="SelectCategory">
-        <select onChange={this.handleChange}>
-          <option selected={selectedCategory === ""} value="">
-            Select Category
-          </option>
+        <select value={selectedCategory} onChange={this.handleChange}>
+          <option value="">Select Category</option>
           {categories.map(category => (
-            <option
-              selected={selectedCategory === category.name}
-              value={category.name}
-              key={category.name}
-            >
+            <option value={category.name} key={category.name}>
               {category.name}
             </option>
           ))}
