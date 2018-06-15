@@ -8,6 +8,7 @@ import PostDetail from "./PostDetail";
 import AddPost from "./AddPost";
 import ListCategoryPosts from "./ListCategoryPosts";
 import EditPost from "./EditPost";
+import EditComment from "./EditComment";
 
 class App extends Component {
   render() {
@@ -24,6 +25,11 @@ class App extends Component {
             exact
             path="/:category/:post_id/edit-post"
             component={EditPost}
+          />
+          <Route
+            exact
+            path="/comments/:comment_id/edit-comment"
+            component={EditComment}
           />
         </Switch>
 

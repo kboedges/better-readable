@@ -5,9 +5,9 @@ const headers = {
 
 export const SET_COMMENT = "SET_COMMENT";
 
-export function getComment() {
+export function getComment(commentId) {
   return dispatch =>
-    fetch("http://localhost:3001/comments/894tuq4ut84ut8v4t8wun89g", {
+    fetch(`http://localhost:3001/comments/${commentId}`, {
       headers
     })
       .then(res => res.json())

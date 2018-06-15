@@ -17,14 +17,11 @@ class EditPost extends Component {
   }
 
   componentDidMount() {
-    this.props.getPost(this.props.match.params.post_id).then(() => {
+    const { post, getPost, match } = this.props;
+    getPost(match.params.post_id).then(() => {
       this.setState({
-        title: this.props.post.updatedPost
-          ? this.props.post.updatedPost.title
-          : this.props.post.title,
-        body: this.props.post.updatedPost
-          ? this.props.post.updatedPost.body
-          : this.props.post.body
+        title: post.updatedPost ? post.updatedPost.title : post.title,
+        body: post.updatedPost ? post.updatedPost.body : post.body
       });
     });
   }
@@ -97,5 +94,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(EditPost);
-
-// https://medium.com/@justintulk/best-practices-for-resetting-an-es6-react-components-state-81c0c86df98d

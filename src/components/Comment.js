@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 // Actions
 import { getPostComments } from "../reducers/post-comments/actions";
@@ -59,13 +60,20 @@ class Comment extends Component {
         <div className="card flex-grow-1">
           <div className="card-body">
             <h4 className="card-title">{comment.title}</h4>
+            <p className="card-text">
+              {comment.updatedComment
+                ? comment.updatedComment.body
+                : comment.body}
+            </p>
             <h6 className="card-subtitle mb-2 text-muted post-author">
               {comment.author}
             </h6>
-            <p className="card-text">{comment.body}</p>
-            <a href="#!" className="card-link ">
+            <Link
+              to={`/comments/${comment.id}/edit-comment`}
+              className="card-link "
+            >
               Edit
-            </a>
+            </Link>
             <a
               href="#!"
               onClick={this.deleteCommentHandler}
