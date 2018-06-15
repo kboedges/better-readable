@@ -7,7 +7,6 @@ const headers = {
 export const EDIT_COMMENT_SUCCESS = "EDIT_COMMENT_SUCCESS";
 
 export function editComment(updatedComment, commentId) {
-  console.log("In:", updatedComment);
   return dispatch =>
     fetch(`http://localhost:3001/comments/${commentId}`, {
       headers,
@@ -16,8 +15,7 @@ export function editComment(updatedComment, commentId) {
     })
       .then(res => res.json())
       .catch(error => console.log(error))
-      .then(updatedComment => console.log("hi", updatedComment));
-  // .then(updatedComment => dispatch(editCommentSuccess(updatedComment)));
+      .then(updatedComment => dispatch(editCommentSuccess(updatedComment)));
 }
 
 export function editCommentSuccess(updatedComment) {

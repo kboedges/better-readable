@@ -12,7 +12,6 @@ import { setCategorySort } from "../reducers/set-category-sort/actions";
 class ListCategoryPosts extends Component {
   componentDidMount() {
     this.props.getAllPosts();
-    console.log("didmount", this.props.match.params.category);
     this.props.setCategorySort(this.props.match.params.category);
   }
 
@@ -26,7 +25,6 @@ class ListCategoryPosts extends Component {
 
   render() {
     const { allPosts, selectedCategory } = this.props;
-    console.log("return", selectedCategory);
 
     return (
       <div className="ListCategoryPosts">

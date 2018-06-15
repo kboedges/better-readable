@@ -42,7 +42,6 @@ class AddComment extends Component {
       [name]: value,
       parentId: this.props.post.id
     });
-    console.log(this.state);
   };
 
   render() {

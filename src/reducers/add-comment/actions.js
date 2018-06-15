@@ -7,7 +7,6 @@ const headers = {
 export const ADD_COMMENT_SUCCESS = "ADD_COMMENT_SUCCESS";
 
 export function addComment(newComment) {
-  console.log("?");
   return dispatch =>
     fetch("http://localhost:3001/comments/", {
       headers,
@@ -16,7 +15,7 @@ export function addComment(newComment) {
     })
       .then(res => res.json())
       .catch(error => console.log(error))
-      .then(newComment => console.log(newComment));
+      .then(newComment => dispatch(addCommentSuccess(newComment)));
 }
 
 export function addCommentSuccess(newComment) {

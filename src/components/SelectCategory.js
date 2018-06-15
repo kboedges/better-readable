@@ -26,7 +26,6 @@ class SelectCategory extends Component {
 
   render() {
     const { categories, selectedCategory } = this.props;
-    console.log("select", selectedCategory);
 
     return (
       <div className="SelectCategory">

@@ -35,10 +35,6 @@ class EditPost extends Component {
       this.props.getPost(postId);
       this.props.getAllPosts();
     });
-    // this.setState({
-    //   title: "",
-    //   body: ""
-    // });
   };
 
   handleChange = event => {

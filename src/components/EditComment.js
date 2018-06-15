@@ -19,7 +19,6 @@ class EditPost extends Component {
 
   componentDidMount() {
     this.props.getComment(this.props.match.params.comment_id).then(() => {
-      console.log(this.props.comment);
       this.setState({
         timestamp: Date.now(),
         body: this.props.comment.updatedComment
