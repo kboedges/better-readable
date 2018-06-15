@@ -38,7 +38,7 @@ class EditPost extends Component {
 
   handleChange = event => {
     this.setState({
-      body: event.target.body
+      body: event.target.value
     });
   };
 

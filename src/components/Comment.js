@@ -60,6 +60,7 @@ class Comment extends Component {
         <div className="card flex-grow-1">
           <div className="card-body">
             <h4 className="card-title">{comment.title}</h4>
+
             <p className="card-text">
               {comment.updatedComment
                 ? comment.updatedComment.body

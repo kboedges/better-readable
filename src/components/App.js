@@ -9,6 +9,7 @@ import AddPost from "./AddPost";
 import ListCategoryPosts from "./ListCategoryPosts";
 import EditPost from "./EditPost";
 import EditComment from "./EditComment";
+import My404 from "./My404";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={ListPosts} />
           <Route exact path="/add-post" component={AddPost} />
+          <Route exact path="/404" component={My404} />
           <Route exact path="/:category" component={ListCategoryPosts} />
           <Route exact path="/:category/:post_id" component={PostDetail} />
           <Route

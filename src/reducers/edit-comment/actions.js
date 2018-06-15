@@ -15,7 +15,9 @@ export function editComment(updatedComment, commentId) {
       body: JSON.stringify({ updatedComment })
     })
       .then(res => res.json())
-      .then(updatedComment => dispatch(editCommentSuccess(updatedComment)));
+      .catch(error => console.log(error))
+      .then(updatedComment => console.log("hi", updatedComment));
+  // .then(updatedComment => dispatch(editCommentSuccess(updatedComment)));
 }
 
 export function editCommentSuccess(updatedComment) {

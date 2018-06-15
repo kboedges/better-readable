@@ -17,12 +17,22 @@ class EditPost extends Component {
   }
 
   componentDidMount() {
-    const { post, getPost, match } = this.props;
-    getPost(match.params.post_id).then(() => {
-      this.setState({
-        title: post.updatedPost ? post.updatedPost.title : post.title,
-        body: post.updatedPost ? post.updatedPost.body : post.body
-      });
+    console.log("Before", this.state);
+    // const { post } = this.props;
+    this.props.getPost(this.props.match.params.post_id).then(() => {
+      this.setState(
+        {
+          title: this.props.post.updatedPost
+            ? this.props.post.updatedPost.title
+            : this.props.post.title,
+          body: this.props.post.updatedPost
+            ? this.props.post.updatedPost.body
+            : this.props.post.body
+        },
+        () => {
+          console.log("After", this.state);
+        }
+      );
     });
   }
 
@@ -32,6 +42,10 @@ class EditPost extends Component {
       this.props.getPost(postId);
       this.props.getAllPosts();
     });
+    // this.setState({
+    //   title: "",
+    //   body: ""
+    // });
   };
 
   handleChange = event => {

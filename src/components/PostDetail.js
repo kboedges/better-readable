@@ -12,7 +12,11 @@ import { getPostComments } from "../reducers/post-comments/actions";
 
 class PostDetail extends Component {
   componentDidMount() {
-    this.props.getPost(this.props.match.params.post_id);
+    this.props.getPost(this.props.match.params.post_id).then(() => {
+      if (typeof this.props.post.id === "undefined") {
+        this.props.history.replace("/404");
+      }
+    });
     this.props.getPostComments(this.props.match.params.post_id);
   }
 
