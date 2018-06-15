@@ -22,6 +22,7 @@ class AddComment extends Component {
     this.props.addComment(commentObj).then(() => {
       this.props.getPostComments(this.props.post.id);
       this.props.getPost(this.props.post.id);
+
       this.setState({
         id: Math.floor((1 + Math.random()) * 0x10000).toString(),
         timestamp: Date.now(),
@@ -50,14 +51,14 @@ class AddComment extends Component {
     return (
       <div className="AddComment flex-grow-1 mt-4">
         <textarea
-          value={this.state.value}
+          value={this.state.body}
           onChange={this.handleChange}
           name="body"
           className="form-control mb-2"
           placeholder="New comment..."
         />
         <input
-          value={this.state.value}
+          value={this.state.author}
           onChange={this.handleChange}
           name="author"
           className="form-control mb-2"

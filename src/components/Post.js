@@ -33,7 +33,6 @@ class Post extends Component {
 
   render() {
     const { post, getPost, postDetail } = this.props;
-    console.log(post.updatedPost ? post.updatedPost.title : "fuck");
 
     return (
       <div className="Post mt-3 d-flex flex-direction-row">
