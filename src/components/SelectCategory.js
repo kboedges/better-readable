@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 
+// Actions
+import { setCategorySort } from "../reducers/set-category-sort/actions";
+
 class SelectCategory extends Component {
   constructor(props) {
     super(props);
@@ -15,20 +18,28 @@ class SelectCategory extends Component {
         value: e.target.value
       },
       () => {
+        this.props.setCategorySort(myVal);
         this.props.history.push(`/${myVal}`);
       }
     );
   };
 
   render() {
-    const { categories } = this.props;
+    const { categories, selectedCategory } = this.props;
+    console.log("select", selectedCategory);
 
     return (
       <div className="SelectCategory">
-        <select value={this.state.value} onChange={this.handleChange}>
-          <option value="">Select Category</option>
+        <select onChange={this.handleChange}>
+          <option selected={selectedCategory === ""} value="">
+            Select Category
+          </option>
           {categories.map(category => (
-            <option value={category.name} key={category.name}>
+            <option
+              selected={selectedCategory === category.name}
+              value={category.name}
+              key={category.name}
+            >
               {category.name}
             </option>
           ))}
@@ -39,7 +50,16 @@ class SelectCategory extends Component {
 }
 
 const mapStateToProps = ({ categories, selectedCategory }) => ({
-  categories
+  categories,
+  selectedCategory
 });
 
-export default connect(mapStateToProps)(withRouter(SelectCategory));
+const mapDispatchToProps = dispatch => ({
+  setCategorySort: selectedCategory =>
+    dispatch(setCategorySort(selectedCategory))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(SelectCategory));

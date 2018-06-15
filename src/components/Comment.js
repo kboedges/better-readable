@@ -59,16 +59,14 @@ class Comment extends Component {
         </div>
         <div className="card flex-grow-1">
           <div className="card-body">
-            <h4 className="card-title">{comment.title}</h4>
-
-            <p className="card-text">
+            <h6 className="card-text mb-2">
               {comment.updatedComment
                 ? comment.updatedComment.body
                 : comment.body}
-            </p>
-            <h6 className="card-subtitle mb-2 text-muted post-author">
-              {comment.author}
             </h6>
+            <p className="card-subtitle mb-2 text-muted post-author">
+              {comment.author}
+            </p>
             <Link
               to={`/comments/${comment.id}/edit-comment`}
               className="card-link "

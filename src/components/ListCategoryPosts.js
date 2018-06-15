@@ -7,10 +7,13 @@ import Toolbar from "./Toolbar";
 
 // Actions
 import { getAllPosts } from "../reducers/posts/actions";
+import { setCategorySort } from "../reducers/set-category-sort/actions";
 
 class ListCategoryPosts extends Component {
   componentDidMount() {
     this.props.getAllPosts();
+    console.log("didmount", this.props.match.params.category);
+    this.props.setCategorySort(this.props.match.params.category);
   }
 
   sortPost = (a, b) => {
@@ -22,8 +25,8 @@ class ListCategoryPosts extends Component {
   };
 
   render() {
-    const { allPosts } = this.props;
-    const selectedCategory = this.props.match.params.category;
+    const { allPosts, selectedCategory } = this.props;
+    console.log("return", selectedCategory);
 
     return (
       <div className="ListCategoryPosts">
@@ -48,13 +51,16 @@ class ListCategoryPosts extends Component {
   }
 }
 
-const mapStateToProps = ({ allPosts, sortOption }) => ({
+const mapStateToProps = ({ allPosts, sortOption, selectedCategory }) => ({
   allPosts,
-  sortOption
+  sortOption,
+  selectedCategory
 });
 
 const mapDispatchToProps = dispatch => ({
-  getAllPosts: () => dispatch(getAllPosts())
+  getAllPosts: () => dispatch(getAllPosts()),
+  setCategorySort: selectedCategory =>
+    dispatch(setCategorySort(selectedCategory))
 });
 
 export default connect(
