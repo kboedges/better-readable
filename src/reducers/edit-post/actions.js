@@ -7,6 +7,7 @@ const headers = {
 export const EDIT_POST_SUCCESS = "EDIT_POST_SUCCESS";
 
 export function editPost(updatedPost, postId) {
+  console.log("In:", updatedPost);
   return dispatch =>
     fetch(`http://localhost:3001/posts/${postId}`, {
       headers,

@@ -11,19 +11,28 @@ class EditPost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.post.title,
-      body: this.props.post.body
+      title: "",
+      body: ""
     };
   }
 
   componentDidMount() {
-    this.props.getPost(this.props.match.params.post_id);
+    this.props.getPost(this.props.match.params.post_id).then(() => {
+      this.setState({
+        title: this.props.post.updatedPost
+          ? this.props.post.updatedPost.title
+          : this.props.post.title,
+        body: this.props.post.updatedPost
+          ? this.props.post.updatedPost.body
+          : this.props.post.body
+      });
+    });
   }
 
   editPostHandler = updatedDeets => {
-    console.log(updatedDeets);
-    this.props.editPost(updatedDeets, this.props.post.id).then(() => {
-      this.props.getPost(this.props.post.id);
+    const postId = this.props.post.id;
+    this.props.editPost(updatedDeets, postId).then(() => {
+      this.props.getPost(postId);
       this.props.getAllPosts();
     });
   };
@@ -36,7 +45,6 @@ class EditPost extends Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state);
   };
 
   render() {
@@ -47,33 +55,15 @@ class EditPost extends Component {
         <div className="edit-post">
           <h3 className="edit-post-title">Edit Post</h3>
           <input
-            value={this.state.value}
+            value={this.state.title}
             onChange={this.handleChange}
             className="form-control mb-2"
             type="text"
             name="title"
             placeholder="Title"
           />
-          <input
-            disabled
-            value={post.category}
-            onChange={this.handleChange}
-            className="form-control mb-2"
-            type="text"
-            name="category"
-            placeholder="Category"
-          />
-          <input
-            disabled
-            value={post.author}
-            onChange={this.handleChange}
-            className="form-control mb-2"
-            type="text"
-            name="author"
-            placeholder="Author"
-          />
           <textarea
-            value={this.state.value}
+            value={this.state.body}
             onChange={this.handleChange}
             className="form-control mb-2"
             name="body"
@@ -98,7 +88,7 @@ const mapStateToProps = ({ post }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  editPost: post => dispatch(editPost(post)),
+  editPost: (updatedDeets, postId) => dispatch(editPost(updatedDeets, postId)),
   getPost: postId => dispatch(getPost(postId)),
   getAllPosts: () => dispatch(getAllPosts())
 });

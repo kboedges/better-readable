@@ -33,6 +33,7 @@ class Post extends Component {
 
   render() {
     const { post, getPost, postDetail } = this.props;
+    console.log(post.updatedPost ? post.updatedPost.title : "fuck");
 
     return (
       <div className="Post mt-3 d-flex flex-direction-row">
@@ -66,17 +67,23 @@ class Post extends Component {
             {!postDetail ? (
               <Link to={`/${post.category}/${post.id}`}>
                 <h4 onClick={() => getPost(post.id)} className="card-title">
-                  {post.title}
+                  {post.updatedPost ? post.updatedPost.title : post.title}
                 </h4>
               </Link>
             ) : (
-              <h4 className="card-title">{post.title}</h4>
+              <h4 className="card-title">
+                {post.updatedPost ? post.updatedPost.title : post.title}
+              </h4>
             )}
 
             <h6 className="card-subtitle mb-2 text-muted post-author">
               {post.author}
             </h6>
-            {postDetail && <p className="card-text">{post.body}</p>}
+            {postDetail && (
+              <p className="card-text">
+                {post.updatedPost ? post.updatedPost.body : post.body}
+              </p>
+            )}
             <p className="card-text">{post.commentCount} Comments</p>
             <Link
               to={`/${post.category}/${post.id}/edit-post`}
