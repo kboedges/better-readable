@@ -17,22 +17,15 @@ class EditPost extends Component {
   }
 
   componentDidMount() {
-    console.log("Before", this.state);
-    // const { post } = this.props;
     this.props.getPost(this.props.match.params.post_id).then(() => {
-      this.setState(
-        {
-          title: this.props.post.updatedPost
-            ? this.props.post.updatedPost.title
-            : this.props.post.title,
-          body: this.props.post.updatedPost
-            ? this.props.post.updatedPost.body
-            : this.props.post.body
-        },
-        () => {
-          console.log("After", this.state);
-        }
-      );
+      this.setState({
+        title: this.props.post.updatedPost
+          ? this.props.post.updatedPost.title
+          : this.props.post.title,
+        body: this.props.post.updatedPost
+          ? this.props.post.updatedPost.body
+          : this.props.post.body
+      });
     });
   }
 
