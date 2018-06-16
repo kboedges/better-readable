@@ -29,7 +29,7 @@ class AddPost extends Component {
   };
 
   render() {
-    const { addPost } = this.props;
+    const { addPost, categories } = this.props;
 
     return (
       <div className="AddPost px-5 py-2 pt-5">
@@ -43,20 +43,28 @@ class AddPost extends Component {
             name="title"
             placeholder="Title"
           />
-          <input
-            value={this.state.value}
-            onChange={this.handleChange}
-            className="form-control mb-2"
-            type="text"
-            name="category"
-            placeholder="Category"
-          />
+          {categories.map(category => (
+            <label className="mr-3" htmlFor={category.name}>
+              <input
+                value={category.name}
+                id={category.name}
+                onChange={this.handleChange}
+                className="form-control mb-2 mr-1"
+                type="radio"
+                name="category"
+                placeholder="Category"
+              />
+              {category.name}
+            </label>
+          ))}
+
           <input
             value={this.state.value}
             onChange={this.handleChange}
             className="form-control mb-2"
             type="text"
             name="author"
+            autoComplete="username"
             placeholder="Author"
           />
           <textarea
@@ -80,11 +88,15 @@ class AddPost extends Component {
   }
 }
 
+const mapStateToProps = ({ categories }) => ({
+  categories
+});
+
 const mapDispatchToProps = dispatch => ({
   addPost: newPost => dispatch(addPost(newPost))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddPost);

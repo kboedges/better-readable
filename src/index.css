@@ -90,3 +90,8 @@ body {
 a:hover {
   text-decoration: none !important;
 }
+
+input[name="category"] {
+  display: inline-block !important;
+  width: initial;
+}
