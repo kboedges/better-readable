@@ -1,10 +1,10 @@
+import { ADD_COMMENT_SUCCESS } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower",
   "Content-Type": "application/json"
 };
-
-export const ADD_COMMENT_SUCCESS = "ADD_COMMENT_SUCCESS";
 
 export function addComment(newComment) {
   return dispatch =>

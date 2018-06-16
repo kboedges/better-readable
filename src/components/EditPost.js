@@ -19,12 +19,8 @@ class EditPost extends Component {
   componentDidMount() {
     this.props.getPost(this.props.match.params.post_id).then(() => {
       this.setState({
-        title: this.props.post.updatedPost
-          ? this.props.post.updatedPost.title
-          : this.props.post.title,
-        body: this.props.post.updatedPost
-          ? this.props.post.updatedPost.body
-          : this.props.post.body
+        title: this.props.post.updatedPost ? this.props.post.updatedPost.title : this.props.post.title,
+        body: this.props.post.updatedPost ? this.props.post.updatedPost.body : this.props.post.body
       });
     });
   }

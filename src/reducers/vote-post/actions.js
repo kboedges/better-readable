@@ -1,10 +1,10 @@
+import { VOTE_POST_SUCCESS } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower",
   "Content-Type": "application/json"
 };
-
-export const VOTE_POST_SUCCESS = "VOTE_POST_SUCCESS";
 
 export function votePost(postId, option) {
   return dispatch =>

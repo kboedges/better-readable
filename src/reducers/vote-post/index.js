@@ -1,4 +1,4 @@
-import { VOTE_POST_SUCCESS } from "./actions";
+import { VOTE_POST_SUCCESS } from "../actionTypes";
 
 const initialState = {};
 

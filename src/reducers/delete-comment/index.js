@@ -1,4 +1,4 @@
-import { DELETE_COMMENT_SUCCESS } from "./actions";
+import { DELETE_COMMENT_SUCCESS } from "../actionTypes";
 
 const initialState = {};
 

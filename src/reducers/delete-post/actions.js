@@ -1,10 +1,10 @@
+import { DELETE_POST_SUCCESS } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower",
   "Content-Type": "application/json"
 };
-
-export const DELETE_POST_SUCCESS = "DELETE_POST_SUCCESS";
 
 export function deletePost(postId, option) {
   return dispatch =>

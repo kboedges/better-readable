@@ -1,10 +1,10 @@
+import { DELETE_COMMENT_SUCCESS } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower",
   "Content-Type": "application/json"
 };
-
-export const DELETE_COMMENT_SUCCESS = "DELETE_COMMENT_SUCCESS";
 
 export function deleteComment(commentId, option) {
   return dispatch =>

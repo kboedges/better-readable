@@ -37,21 +37,13 @@ class Comment extends Component {
           role="group"
           aria-label="Basic example"
         >
-          <button
-            onClick={() => this.voteCommentHandler("upVote")}
-            type="button"
-            className="btn btn-link vote"
-          >
+          <button onClick={() => this.voteCommentHandler("upVote")} type="button" className="btn btn-link vote">
             <span aria-label="thumbsup" role="img">
               👍
             </span>
           </button>
           <p className="m-0 vote-score">{comment.voteScore}</p>
-          <button
-            onClick={() => this.voteCommentHandler("downVote")}
-            type="button"
-            className="btn btn-link vote"
-          >
+          <button onClick={() => this.voteCommentHandler("downVote")} type="button" className="btn btn-link vote">
             <span aria-label="thumbsdown" role="img">
               👎
             </span>
@@ -59,25 +51,12 @@ class Comment extends Component {
         </div>
         <div className="card flex-grow-1">
           <div className="card-body">
-            <h6 className="card-text mb-2">
-              {comment.updatedComment
-                ? comment.updatedComment.body
-                : comment.body}
-            </h6>
-            <p className="card-subtitle mb-2 text-muted post-author">
-              {comment.author}
-            </p>
-            <Link
-              to={`/comments/${comment.id}/edit-comment`}
-              className="card-link "
-            >
+            <h6 className="card-text mb-2">{comment.updatedComment ? comment.updatedComment.body : comment.body}</h6>
+            <p className="card-subtitle mb-2 text-muted post-author">{comment.author}</p>
+            <Link to={`/comments/${comment.id}/edit-comment`} className="card-link ">
               Edit
             </Link>
-            <a
-              href="#!"
-              onClick={this.deleteCommentHandler}
-              className="card-link"
-            >
+            <a href="#!" onClick={this.deleteCommentHandler} className="card-link">
               Delete
             </a>
           </div>

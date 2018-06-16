@@ -1,10 +1,10 @@
+import { ADD_POST_SUCCESS } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower",
   "Content-Type": "application/json"
 };
-
-export const ADD_POST_SUCCESS = "ADD_POST_SUCCESS";
 
 export function addPost(newPost) {
   return dispatch =>

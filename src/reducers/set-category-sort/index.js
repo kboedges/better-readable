@@ -1,4 +1,4 @@
-import { SET_CATEGORY_SORT } from "./actions";
+import { SET_CATEGORY_SORT } from "../actionTypes";
 
 const initialState = "";
 

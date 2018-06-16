@@ -1,4 +1,4 @@
-export const SET_SORT = "SET_SORT";
+import { SET_SORT } from "../actionTypes";
 
 export function setSort(sortOption) {
   return {

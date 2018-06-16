@@ -1,9 +1,9 @@
+import { SET_CATEGORIES } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower"
 };
-
-export const SET_CATEGORIES = "SET_CATEGORIES";
 
 export function getCategories() {
   return dispatch =>

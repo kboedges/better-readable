@@ -1,9 +1,9 @@
+import { SET_ALL_POSTS } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower"
 };
-
-export const SET_ALL_POSTS = "SET_ALL_POSTS";
 
 export function getAllPosts() {
   return dispatch =>

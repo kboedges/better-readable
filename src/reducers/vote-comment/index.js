@@ -1,4 +1,4 @@
-import { VOTE_COMMENT_SUCCESS } from "./actions";
+import { VOTE_COMMENT_SUCCESS } from "../actionTypes";
 
 const initialState = {};
 

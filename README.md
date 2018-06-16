@@ -21,10 +21,10 @@ $ cd better-readable
 There's also an API server available at https://github.com/udacity/reactnd-project-readable-starter. Install and start the API server with the following steps:
 
 ```
-git clone https://github.com/udacity/reactnd-project-readable-starter
-cd api-server
-npm install
-node server
+$ git clone https://github.com/udacity/reactnd-project-readable-starter
+$ cd api-server
+$ npm install
+$ node server
 ```
 
 ## Additional Info

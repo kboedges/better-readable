@@ -1,4 +1,4 @@
-export const SET_CATEGORY_SORT = "SET_CATEGORY_SORT";
+import { SET_CATEGORY_SORT } from "../actionTypes";
 
 export function setCategorySort(selectedCategory) {
   return {

@@ -21,9 +21,7 @@ class EditPost extends Component {
     this.props.getComment(this.props.match.params.comment_id).then(() => {
       this.setState({
         timestamp: Date.now(),
-        body: this.props.comment.updatedComment
-          ? this.props.comment.updatedComment.body
-          : this.props.comment.body
+        body: this.props.comment.updatedComment ? this.props.comment.updatedComment.body : this.props.comment.body
       });
     });
   }
@@ -75,8 +73,7 @@ const mapStateToProps = ({ post, comment }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  editComment: (updatedDeets, commentId) =>
-    dispatch(editComment(updatedDeets, commentId)),
+  editComment: (updatedDeets, commentId) => dispatch(editComment(updatedDeets, commentId)),
   getPost: postId => dispatch(getPost(postId)),
   getPostComments: postId => dispatch(getPostComments(postId)),
   getComment: commentId => dispatch(getComment(commentId))

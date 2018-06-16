@@ -1,4 +1,4 @@
-import { SET_ALL_POSTS } from "./actions";
+import { SET_ALL_POSTS } from "../actionTypes";
 
 const initialState = [];
 

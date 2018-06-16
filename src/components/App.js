@@ -16,35 +16,18 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-
         <Switch>
           <Route exact path="/" component={ListPosts} />
           <Route exact path="/add-post" component={AddPost} />
           <Route exact path="/404" component={My404} />
           <Route exact path="/:category" component={ListCategoryPosts} />
           <Route exact path="/:category/:post_id" component={PostDetail} />
-          <Route
-            exact
-            path="/:category/:post_id/edit-post"
-            component={EditPost}
-          />
-          <Route
-            exact
-            path="/comments/:comment_id/edit-comment"
-            component={EditComment}
-          />
+          <Route exact path="/:category/:post_id/edit-post" component={EditPost} />
+          <Route exact path="/comments/:comment_id/edit-comment" component={EditComment} />
         </Switch>
-
-        {/* <PostDetail/> */}
       </div>
     );
   }
 }
 
 export default App;
-
-// If a selectedCategory exists, display categoryPosts instead of allPosts.
-// In the toolbar at the top, there will be an AddPost comp, CategorySelect, and SortPosts comp
-// Each tool comp will adjust the state in the store
-// Based on the info in the store, ListPosts will display different information
-// The comps will work separately as much as possible

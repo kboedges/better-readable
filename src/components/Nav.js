@@ -13,23 +13,8 @@ class Nav extends Component {
             height="32"
             viewBox="0 0 100 100"
           >
-            <rect
-              x="20"
-              y="20"
-              fill="transparent"
-              stroke="#fff"
-              strokeWidth="5"
-              width="60"
-              height="60"
-            />
-            <circle
-              fill="transparent"
-              stroke="#fff"
-              cx="50"
-              cy="50"
-              r="45"
-              strokeWidth="5"
-            />
+            <rect x="20" y="20" fill="transparent" stroke="#fff" strokeWidth="5" width="60" height="60" />
+            <circle fill="transparent" stroke="#fff" cx="50" cy="50" r="45" strokeWidth="5" />
           </svg>
         </Link>
         <Link to="/">

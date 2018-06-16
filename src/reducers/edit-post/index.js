@@ -1,4 +1,4 @@
-import { EDIT_POST_SUCCESS } from "./actions";
+import { EDIT_POST_SUCCESS } from "../actionTypes";
 
 const initialState = {};
 

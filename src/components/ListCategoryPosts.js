@@ -30,8 +30,7 @@ class ListCategoryPosts extends Component {
       <div className="ListCategoryPosts">
         <Toolbar />
         <ol className="post-list px-5 py-2">
-          {allPosts.filter(post => post.category === selectedCategory).length >
-          0 ? (
+          {allPosts.filter(post => post.category === selectedCategory).length > 0 ? (
             allPosts
               .sort(this.sortPost)
               .filter(post => post.category === selectedCategory)
@@ -57,8 +56,7 @@ const mapStateToProps = ({ allPosts, sortOption, selectedCategory }) => ({
 
 const mapDispatchToProps = dispatch => ({
   getAllPosts: () => dispatch(getAllPosts()),
-  setCategorySort: selectedCategory =>
-    dispatch(setCategorySort(selectedCategory))
+  setCategorySort: selectedCategory => dispatch(setCategorySort(selectedCategory))
 });
 
 export default connect(

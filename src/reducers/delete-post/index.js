@@ -1,4 +1,4 @@
-import { DELETE_POST_SUCCESS } from "./actions";
+import { DELETE_POST_SUCCESS } from "../actionTypes";
 
 const initialState = {};
 

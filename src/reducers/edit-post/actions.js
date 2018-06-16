@@ -1,10 +1,10 @@
+import { EDIT_POST_SUCCESS } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower",
   "Content-Type": "application/json"
 };
-
-export const EDIT_POST_SUCCESS = "EDIT_POST_SUCCESS";
 
 export function editPost(updatedPost, postId) {
   return dispatch =>

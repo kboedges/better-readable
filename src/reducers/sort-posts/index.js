@@ -1,4 +1,4 @@
-import { SET_SORT } from "./actions";
+import { SET_SORT } from "../actionTypes";
 
 const initialState = "byDate";
 

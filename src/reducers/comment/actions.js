@@ -1,9 +1,9 @@
+import { SET_COMMENT } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower"
 };
-
-export const SET_COMMENT = "SET_COMMENT";
 
 export function getComment(commentId) {
   return dispatch =>

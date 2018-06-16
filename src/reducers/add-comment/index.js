@@ -1,4 +1,4 @@
-import { ADD_COMMENT_SUCCESS } from "./actions";
+import { ADD_COMMENT_SUCCESS } from "../actionTypes";
 
 const initialState = {};
 

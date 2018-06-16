@@ -1,4 +1,4 @@
-import { ADD_POST_SUCCESS } from "./actions";
+import { ADD_POST_SUCCESS } from "../actionTypes";
 
 const initialState = {};
 

@@ -1,4 +1,4 @@
-import { SET_POST } from "./actions";
+import { SET_POST } from "../actionTypes";
 
 const initialState = {};
 

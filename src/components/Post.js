@@ -41,21 +41,13 @@ class Post extends Component {
           role="group"
           aria-label="Basic example"
         >
-          <button
-            onClick={() => this.votePostHandler("upVote")}
-            type="button"
-            className="btn btn-link vote"
-          >
+          <button onClick={() => this.votePostHandler("upVote")} type="button" className="btn btn-link vote">
             <span aria-label="thumbsup" role="img">
               👍
             </span>
           </button>
           <p className="m-0 vote-score">{post.voteScore}</p>
-          <button
-            onClick={() => this.votePostHandler("downVote")}
-            type="button"
-            className="btn btn-link vote"
-          >
+          <button onClick={() => this.votePostHandler("downVote")} type="button" className="btn btn-link vote">
             <span aria-label="thumbsdown" role="img">
               👎
             </span>
@@ -70,24 +62,13 @@ class Post extends Component {
                 </h4>
               </Link>
             ) : (
-              <h4 className="card-title">
-                {post.updatedPost ? post.updatedPost.title : post.title}
-              </h4>
+              <h4 className="card-title">{post.updatedPost ? post.updatedPost.title : post.title}</h4>
             )}
 
-            <h6 className="card-subtitle mb-2 text-muted post-author">
-              {post.author}
-            </h6>
-            {postDetail && (
-              <p className="card-text">
-                {post.updatedPost ? post.updatedPost.body : post.body}
-              </p>
-            )}
+            <h6 className="card-subtitle mb-2 text-muted post-author">{post.author}</h6>
+            {postDetail && <p className="card-text">{post.updatedPost ? post.updatedPost.body : post.body}</p>}
             <p className="card-text">{post.commentCount} Comments</p>
-            <Link
-              to={`/${post.category}/${post.id}/edit-post`}
-              className="card-link "
-            >
+            <Link to={`/${post.category}/${post.id}/edit-post`} className="card-link ">
               Edit
             </Link>
             <Link to="/" onClick={this.deletePostHandler} className="card-link">

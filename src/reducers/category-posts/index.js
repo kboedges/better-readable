@@ -1,4 +1,4 @@
-import { SET_CATEGORY_POSTS } from "./actions";
+import { SET_CATEGORY_POSTS } from "../actionTypes";
 
 const initialState = [];
 

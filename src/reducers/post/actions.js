@@ -1,9 +1,9 @@
+import { SET_POST } from "../actionTypes";
+
 const headers = {
   Accept: "application/json",
   Authorization: "flower"
 };
-
-export const SET_POST = "SET_POST";
 
 export function getPost(id) {
   return dispatch =>

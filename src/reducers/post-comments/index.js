@@ -1,4 +1,4 @@
-import { SET_POST_COMMENTS } from "./actions";
+import { SET_POST_COMMENTS } from "../actionTypes";
 
 const initialState = [];
 
