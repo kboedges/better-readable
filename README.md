@@ -16,9 +16,16 @@ $ cd better-readable
 2.  Install all project dependencies with `yarn install`
 3.  Start the development server with `yarn start`
 
-## Server
+## Server Setup
 
-The server is available at: https://github.com/udacity/reactnd-project-readable-starter
+There's also an API server available at https://github.com/udacity/reactnd-project-readable-starter. Install and start the API server with the following steps:
+
+```
+git clone https://github.com/udacity/reactnd-project-readable-starter
+cd api-server
+npm install
+node server
+```
 
 ## Additional Info
 
