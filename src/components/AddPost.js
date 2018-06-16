@@ -74,7 +74,12 @@ class AddPost extends Component {
             name="body"
             placeholder="Content"
           />
-          <Link className="btn btn-outline-primary" role="button" to="/" onClick={() => addPost(this.state)}>
+          <Link
+            className="btn btn-outline-primary"
+            role="button"
+            to={`/posts/${this.state.id}`}
+            onClick={() => addPost(this.state)}
+          >
             Add Post
           </Link>
         </div>
